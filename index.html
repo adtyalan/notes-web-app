@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="ie=edge" />
+    <title>Notes App</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles/style.css" />
+    <script
+      src="https://kit.fontawesome.com/2f1e3b5fc9.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="app_bar">
+      <h2 class="head_bar_title"><i class="fas fa-sticky-note"></i> Primpen</h2>
+      <nav>
+        <ul>
+          <li>
+            <h3>
+              <a href="#daftarCatatan"
+                ><i class="fas fa-clipboard"></i> Catatan</a
+              >
+            </h3>
+          </li>
+          <li>
+            <h3>
+              <a href="#catatanArsip"><i class="fas fa-archive"></i> Arsip</a>
+            </h3>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <button id="addNoteButton" type="button">
+        <a href="#top">
+          <i class="fas fa-plus"></i>
+        </a>
+      </button>
+      <section id="addNotesWithInfoContainer" class="addNotesWithInfoContainer">
+        <section class="input_section">
+          <h2>Masukkan Catatan Baru</h2>
+          <form id="inputNote">
+            <div class="input">
+              <label for="inputNoteTitle">Judul Catatan</label>
+              <input
+                type="text"
+                name="inputNoteTitle"
+                id="inputNoteTitle"
+                enterkeyhint="next"
+                required
+                aria-describedby="titleValidation"
+              />
+              <span class="form-control-hint">
+                Misal, Mengerjakan Kalkulus
+              </span>
+              <p
+                id="titleValidation"
+                class="validation-message"
+                aria-live="polite"
+              ></p>
+            </div>
+            <div class="input">
+              <label for="inputNoteBody">Isi Catatan</label>
+              <textarea
+                name="inputNoteBody"
+                id="inputNoteBody"
+                enterkeyhint="go"
+                required
+                aria-describedby="bodyValidation"
+              ></textarea>
+              <span class="form-control-hint">
+                Misal, Mengerjakan tugas kalkulus pada laman e-learning
+                universitas dicoding. Format yang digunakan adalah pdf dan
+                maksimal ukuran 5 MB.
+              </span>
+              <p
+                id="bodyValidation"
+                class="validation-message"
+                aria-live="polite"
+              ></p>
+            </div>
+            <div class="input_inline">
+              <label for="inputNoteIsArchive" class="inputNoteIsArchive"
+                >Arsipkan Catatan</label
+              >
+              <input
+                id="inputNoteIsArchive"
+                class="inputNoteIsArchive"
+                type="checkbox"
+              />
+            </div>
+            <button type="submit">Tambahkan Catatan</button>
+          </form>
+        </section>
+
+        <aside class="notesInfoContainer">
+          <div class="notesInfo">
+            <h2>Informasi</h2>
+            <p>
+              <strong>Catatan</strong> adalah fitur yang memungkinkan Anda untuk
+              menuliskan hal-hal yang perlu diingat. Misalnya, jadwal kuliah,
+              rencana belajar, atau hal-hal penting lainnya.
+            </p>
+            <p>
+              <strong>Arsip</strong> adalah fitur yang memungkinkan Anda untuk
+              menyimpan catatan yang sudah tidak diperlukan lagi. Catatan yang
+              diarsipkan tidak akan muncul di daftar catatan.
+            </p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="notes">
+        <h2 id="daftarCatatan">Daftar Catatan</h2>
+        <div id="notesUnarchivedList" class="notes_list">
+          <!-- <article class="note_item">
+            <h3>Mengerjakan Kalkulus</h3>
+            <p>Mengerjakan tugas kalkulus pada laman e-learning universitas dicoding. Format yang digunakan adalah pdf dan maksimal ukuran 5 MB.</p>
+            <p></p>
+
+            <div class="action">
+              <button class="green">Arsipkan</button>
+              <button class="red">Hapus Catatan</button>
+            </div>
+          </article> -->
+        </div>
+      </section>
+
+      <section id="notesArchived" class="notes">
+        <h2 id="catatanArsip" class="titleArchived">Arsip Catatan</h2>
+        <button id="archiveButton" type="button">
+          <a href="#catatanArsip">
+            <i class="fas fa-archive"></i>
+          </a>
+        </button>
+        <div id="notesArchivedList" class="notes_list">
+          <!-- <article class="note_item">
+            <h3>Mengerjakan Kalkulus</h3>
+            <p>
+              Mengerjakan tugas kalkulus pada laman e-learning universitas
+              dicoding. Format yang digunakan adalah pdf dan maksimal ukuran 5
+              MB.
+            </p>
+            <p></p>
+
+            <div class="action">
+              <button class="green">Arsipkan</button>
+              <button class="red">Hapus Catatan</button>
+            </div>
+          </article> -->
+        </div>
+      </section>
+    </main>
+    <footer>Primpen 2024, Created by Alan Aditya</footer>
+    <script src="./src/script.js" type="module"></script>
+  </body>
+</html>
