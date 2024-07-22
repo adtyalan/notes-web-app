@@ -17,37 +17,21 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./src/styles/style.css" />
+    <link rel="stylesheet" href="./src/styles/responsive.css" />
     <script
       src="https://kit.fontawesome.com/2f1e3b5fc9.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
-    <header class="app_bar">
-      <h2 class="head_bar_title"><i class="fas fa-sticky-note"></i> Primpen</h2>
-      <nav>
-        <ul>
-          <li>
-            <h3>
-              <a href="#daftarCatatan"
-                ><i class="fas fa-clipboard"></i> Catatan</a
-              >
-            </h3>
-          </li>
-          <li>
-            <h3>
-              <a href="#catatanArsip"><i class="fas fa-archive"></i> Arsip</a>
-            </h3>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <header-bar background-color="rgb(109, 41, 50)" color="white"></header-bar>
     <main>
       <button id="addNoteButton" type="button">
         <a href="#top">
           <i class="fas fa-plus"></i>
         </a>
       </button>
+
       <section id="addNotesWithInfoContainer" class="addNotesWithInfoContainer">
         <section class="input_section">
           <h2>Masukkan Catatan Baru</h2>
@@ -105,21 +89,10 @@
           </form>
         </section>
 
-        <aside class="notesInfoContainer">
-          <div class="notesInfo">
-            <h2>Informasi</h2>
-            <p>
-              <strong>Catatan</strong> adalah fitur yang memungkinkan Anda untuk
-              menuliskan hal-hal yang perlu diingat. Misalnya, jadwal kuliah,
-              rencana belajar, atau hal-hal penting lainnya.
-            </p>
-            <p>
-              <strong>Arsip</strong> adalah fitur yang memungkinkan Anda untuk
-              menyimpan catatan yang sudah tidak diperlukan lagi. Catatan yang
-              diarsipkan tidak akan muncul di daftar catatan.
-            </p>
-          </div>
-        </aside>
+        <input-info
+          background-color="rgb(232, 216, 196)"
+          color="black"
+        ></input-info>
       </section>
 
       <section class="notes">
@@ -163,7 +136,10 @@
         </div>
       </section>
     </main>
-    <footer>Primpen 2024, Created by Alan Aditya</footer>
+    <footer-bar text-align="center" background-color="rgb(109, 41, 50)">
+      Primpen 2024, Created by Alan Aditya
+    </footer-bar>
+    <!-- <footer text-align: "center" background-color: "rgb(109, 41, 50)">Primpen 2024, Created by Alan Aditya</footer> -->
     <script src="./src/script.js" type="module"></script>
   </body>
 </html>

@@ -1,4 +1,7 @@
 import notesData from "./js/notes.js";
+import './components/input-info.js'
+import './components/footer-bar.js';
+import './components/header-bar.js'
 const notes = [];
 const RENDER_EVENT = 'render-note';
 const titleValid = document.getElementById('inputNoteTitle');
@@ -312,12 +315,3 @@ function showArchived() {
     }
   });
 }
-
-document.addEventListener('click', (event) => {
-  if (event.target.matches('a[href^="#"]')) {
-      event.preventDefault();
-      document.querySelector(event.target.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-      });
-  }
-});

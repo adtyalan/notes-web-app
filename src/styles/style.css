@@ -11,46 +11,7 @@ button {
 }
 
 body {
-  background-color: rgb(34, 40, 49);
-}
-
-.app_bar {
-  padding: 15px 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: rgb(49, 54, 63);
-  color: white;
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-}
-
-nav ul {
-  display: flex;
-  list-style-type: none;
-  gap: 0.5em;
-}
-
-nav > ul > li {
-  border-radius: 5px;
-  padding: 10px;
-}
-
-nav > ul > li:hover {
-  background-color: rgb(24, 24, 24);
-}
-
-nav > ul > li > h3 > a {
-  font-size: 1em;
-  color: white;
-  text-decoration: none;
+  background-color: rgb(86, 28, 36);
 }
 
 main {
@@ -78,24 +39,9 @@ main > button {
   display: grid;
   grid-template-columns: 4fr 1fr;
   gap: 1em;
-  display: grid;
 }
 
 .notesUnarchivedList h2 {
-  color: white;
-}
-
-.notesInfoContainer {
-  padding: 0px;
-}
-
-.notesInfo {
-  padding: 17px;
-  background-color: #36454f;
-  border-radius: 5px;
-}
-
-.notesInfo h2 {
   color: white;
 }
 
@@ -117,8 +63,8 @@ main > button {
 }
 
 .input_section > form > button {
-  background-color: rgb(25, 25, 112);
-  color: white;
+  background-color: rgb(232, 216, 196);
+  color: black;
   border: none;
   border-radius: 5px;
   display: block;
@@ -246,13 +192,13 @@ textarea {
   border-radius: 5px;
   margin: 10px 0;
   display: grid;
-  background-color: #36454f;
+  background-color: rgb(199, 183, 163);
 }
 
 .notes > .notes_list > .note_item > h3,
 p {
   margin: 8px 0;
-  color: white;
+  color: black;
 }
 
 .notes > .notes_list > .note_item > .action {
@@ -286,11 +232,4 @@ p {
   color: white;
   padding: 8px 12px;
   border-radius: 99px;
-}
-
-footer {
-  padding: 16px;
-  background-color: rgb(49, 54, 63);
-  color: white;
-  text-align: center;
 }
