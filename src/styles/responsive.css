@@ -6,7 +6,7 @@
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   .addNotesWithInfoContainer {
     display: grid;
     grid-template-columns: 4fr 1fr;

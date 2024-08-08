@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -16,8 +16,6 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./src/styles/style.css" />
-    <link rel="stylesheet" href="./src/styles/responsive.css" />
     <script
       src="https://kit.fontawesome.com/2f1e3b5fc9.js"
       crossorigin="anonymous"
@@ -75,16 +73,6 @@
                 aria-live="polite"
               ></p>
             </div>
-            <div class="input_inline">
-              <label for="inputNoteIsArchive" class="inputNoteIsArchive"
-                >Arsipkan Catatan</label
-              >
-              <input
-                id="inputNoteIsArchive"
-                class="inputNoteIsArchive"
-                type="checkbox"
-              />
-            </div>
             <button type="submit">Tambahkan Catatan</button>
           </form>
         </section>
@@ -97,6 +85,7 @@
 
       <section class="notes">
         <h2 id="daftarCatatan">Daftar Catatan</h2>
+        <loading-bar></loading-bar>
         <div id="notesUnarchivedList" class="notes_list">
           <!-- <article class="note_item">
             <h3>Mengerjakan Kalkulus</h3>
@@ -140,6 +129,5 @@
       Primpen 2024, Created by Alan Aditya
     </footer-bar>
     <!-- <footer text-align: "center" background-color: "rgb(109, 41, 50)">Primpen 2024, Created by Alan Aditya</footer> -->
-    <script src="./src/script.js" type="module"></script>
   </body>
 </html>

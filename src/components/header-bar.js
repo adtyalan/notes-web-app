@@ -1,19 +1,20 @@
 class HeaderBar extends HTMLElement {
   static get observedAttributes() {
-    return ['background-color', 'color'];
+    return ['background-color', 'color']
   }
 
   constructor() {
-    super();
-    
-    this._shadowRoot = this.attachShadow({ mode: 'open' });
-    this._color = this.getAttribute('color') || 'white';
-    this._bgColor = this.getAttribute('background-color') || 'rgb(109, 41, 50)';
-    this._style = document.createElement('style');
+    super()
+
+    this._shadowRoot = this.attachShadow({ mode: 'open' })
+    this._color = this.getAttribute('color') || 'white'
+    this._bgColor = this.getAttribute('background-color') || 'rgb(109, 41, 50)'
+    this._style = document.createElement('style')
   }
 
   connectedCallback() {
-    this.render();
+    this.render()
+    this.addSmoothScroll()
   }
 
   updateStyle() {
@@ -25,6 +26,12 @@ class HeaderBar extends HTMLElement {
       box-sizing: border-box;
       --color: ${this._color};
       --bg-color: ${this._bgColor};
+      
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
     }
 
     .head_bar {
@@ -36,10 +43,6 @@ class HeaderBar extends HTMLElement {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      position: sticky;
-      top: 0;
-      left: 0;
-      width: 100%;
     }
 
     h2 {
@@ -87,11 +90,11 @@ class HeaderBar extends HTMLElement {
           gap: 6em;
         }
       }
-    `;
+    `
   }
 
   render() {
-    this.updateStyle();
+    this.updateStyle()
 
     this.shadowRoot.innerHTML = `
     ${this._style.outerHTML}
@@ -110,13 +113,37 @@ class HeaderBar extends HTMLElement {
         </ul>
       </nav>
     </header>
-    `;
+    `
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    this[`_${name.replace('-', '_')}`] = newValue;
-    this.render();
+    this[`_${name.replace('-', '_')}`] = newValue
+    this.render()
+    this.addSmoothScroll()
+  }
+
+  // animasi scroll halus header
+  addSmoothScroll() {
+    const links = this.shadowRoot.querySelectorAll('a[href^="#"]')
+    links.forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault()
+        const targetId = link.getAttribute('href').substring(1)
+        const targetElement = document.getElementById(targetId)
+
+        if (targetElement) {
+          this.smoothScrollTo(targetElement)
+        }
+      })
+    })
+  }
+
+  smoothScrollTo(targetElement) {
+    window.scrollTo({
+      top: targetElement.offsetTop,
+      behavior: 'smooth',
+    })
   }
 }
 
-customElements.define('header-bar', HeaderBar);
+customElements.define('header-bar', HeaderBar)

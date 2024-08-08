@@ -1,17 +1,18 @@
 class InputInfo extends HTMLElement {
   static get observedAttributes() {
-    return ['background-color', 'color'];
+    return ['background-color', 'color']
   }
   constructor() {
-    super();
-    this._shadowRoot = this.attachShadow({ mode: 'open' });
-    this._color = this.getAttribute('color') || 'black';
-    this._bgColor = this.getAttribute('background-color') || 'rgb(232, 216, 196)';
-    this._style = document.createElement('style');
+    super()
+    this._shadowRoot = this.attachShadow({ mode: 'open' })
+    this._color = this.getAttribute('color') || 'black'
+    this._bgColor =
+      this.getAttribute('background-color') || 'rgb(232, 216, 196)'
+    this._style = document.createElement('style')
   }
 
   connectedCallback() {
-    this.render();
+    this.render()
   }
 
   updateStyle() {
@@ -50,11 +51,11 @@ class InputInfo extends HTMLElement {
           color: white;
         }
       }
-    `;
+    `
   }
 
   render() {
-    this.updateStyle();
+    this.updateStyle()
 
     this.shadowRoot.innerHTML = `
       ${this._style.outerHTML}
@@ -73,13 +74,13 @@ class InputInfo extends HTMLElement {
             </p>
           </div>
       </aside>
-    `;
+    `
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    this[`_${name.replace('-', '_')}`] = newValue;
-    this.render();
+    this[`_${name.replace('-', '_')}`] = newValue
+    this.render()
   }
 }
 
-customElements.define('input-info', InputInfo);
+customElements.define('input-info', InputInfo)
